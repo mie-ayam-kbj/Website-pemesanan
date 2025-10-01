@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 MIE AYAM KEBON JERUK | Pesan Online Cepat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ======================================================= */
+        /* CSS Variables & Global Resets (Glassmorphism Base) */
+        /* ======================================================= */
+        :root {
+            --bg-dark: #1e1e3f;
+            --bg-light: #2c2c54;
+            --primary-color: #ff5252;
+            --secondary-color: #3f51b5;
+            --text-light: #f4f4f4;
+            --text-faded: #b0b0d0;
+            --whatsapp-green: #25d366;
+            --ig-purple: #E1306C;
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --radius-large: 25px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 10% 10%, #3e1b73 0%, transparent 40%),
+                              radial-gradient(circle at 90% 90%, #6a1a21 0%, transparent 50%);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* ======================================================= */
+        /* Header Styling (Tanpa Logo) */
+        /* ======================================================= */
+        .glass-card {
+            background: rgba(44, 44, 84, 0.3);
+            border-radius: var(--radius-large);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease-in-out;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            /* Padding disesuaikan karena logo sudah tidak ada */
+            padding: 60px 20px 60px; 
+            background: linear-gradient(145deg, var(--primary-color) 0%, #ff8a8a 100%);
+            color: var(--bg-dark);
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+            box-shadow: 0 10px 20px rgba(255, 82, 82, 0.4);
+        }
+        
+        /* Logo Container Dihapus */
+
+        header h1 {
+            font-size: 3.8em;
+            font-weight: 800;
+            /* Margin dihilangkan karena logo sudah tidak ada di atasnya */
+            margin-top: 0; 
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            /* Margin disesuaikan karena header lebih kecil */
+            margin-top: -60px; 
+            margin-bottom: 50px;
+            padding: 40px;
+            z-index: 100;
+        }
+        
+        h2 {
+            font-weight: 700;
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin-top: 5px;
+            border-radius: 2px;
+        }
+
+        /* ======================================================= */
+        /* Kontak & Social Media Section */
+        /* ======================================================= */
+        #contact-info {
+            padding: 25px;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+        
+        .contact-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-group a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-group a:hover {
+            color: var(--primary-color);
+        }
+        
+        .contact-group i {
+            margin-right: 8px;
+            font-size: 1.3em;
+        }
+
+        /* Warna Gradien Instagram */
+        .fa-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #bc1888;
+        }
+        .fa-location-dot {
+            color: var(--secondary-color);
+        }
+        
+        /* ======================================================= */
+        /* Menu & Input Control (Tidak Berubah) */
+        /* ======================================================= */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu-item {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
+            position: relative;
+        }
+        
+        .menu-name {
+            font-weight: 600;
+            font-size: 1.2em;
+            color: var(--text-light);
+        }
+
+        .menu-description {
+            font-size: 0.9em;
+            color: var(--text-faded);
+            margin-bottom: 5px;
+        }
+
+        .menu-price {
+            font-weight: 800;
+            font-size: 1.3em;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px rgba(255, 82, 82, 0.5);
+            text-align: right;
+        }
+        
+        .quantity-control {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
+        }
+        .quantity-input {
+            width: 60px;
+            padding: 8px 5px;
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1em;
+        }
+
+        #summary {
+            padding: 25px;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+        #total-harga {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 450px;
+            margin: 20px auto 0;
+            padding: 20px;
+            background: var(--whatsapp-green);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: none;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: var(--bg-light);
+            color: var(--text-faded);
+            font-size: 0.8em;
+            margin-top: auto;
+            border-top: 1px solid var(--glass-border);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MIE AYAM KEBON JERUK</h1>
+        <p>Pesan Cepat di Magetan & Madiun. Harga tertera dalam Ribuan (K).</p>
+    </header>
+
+    <div class="container glass-card">
+        
+        <h2><i class="fas fa-hot-tub"></i> Mie & Bakso Pilihan Chef</h2>
+        
+        <ul class="menu-grid">
+            <li class="menu-item glass-card" data-name="Mie Ayam Biasa" data-price="9000">
+                <div class="menu-info">
+                    <span class="menu-name">MIE AYAM BIASA</span>
+                    <span class="menu-description">Resep klasik bumbu rahasia yang gurih.</span>
+                </div>
+                <span class="menu-price">Rp 9K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Mie Ayam Ceker" data-price="12000">
+                <div class="menu-info">
+                    <span class="menu-name">MIE AYAM CEKER</span>
+                    <span class="menu-description">Kombinasi mie dengan 3 ceker ayam super empuk.</span>
+                </div>
+                <span class="menu-price">Rp 12K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Mie Ayam Kepala" data-price="13000">
+                <div class="menu-info">
+                    <span class="menu-name">MIE AYAM KEPALA</span>
+                    <span class="menu-description">Porsi spesial dengan kepala ayam bumbu kecap pedas.</span>
+                </div>
+                <span class="menu-price">Rp 13K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Mie Ayam Telur" data-price="13000">
+                <div class="menu-info">
+                    <span class="menu-name">MIE AYAM TELUR</span>
+                    <span class="menu-description">Mie ayam yang dilengkapi telur rebus protein tinggi.</span>
+                </div>
+                <span class="menu-price">Rp 13K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Mie Ayam Bakso" data-price="12000">
+                <div class="menu-info">
+                    <span class="menu-name">MIE AYAM BAKSO</span>
+                    <span class="menu-description">Mie ayam dengan tambahan 3 butir bakso sapi.</span>
+                </div>
+                <span class="menu-price">Rp 12K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Bakso Jumbo" data-price="16000">
+                <div class="menu-info">
+                    <span class="menu-name">BAKSO JUMBO</span>
+                    <span class="menu-description">Bakso berukuran besar, khusus untuk Anda yang lapar.</span>
+                </div>
+                <span class="menu-price">Rp 16K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Bakso Biasa" data-price="10000">
+                <div class="menu-info">
+                    <span class="menu-name">BAKSO BIASA</span>
+                    <span class="menu-description">Kuah kaldu bening dengan 5 bakso kecil.</span>
+                </div>
+                <span class="menu-price">Rp 10K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+        </ul>
+
+        <h2><i class="fas fa-cocktail"></i> Minuman & Penyegar</h2>
+        
+        <ul class="menu-grid">
+            <li class="menu-item glass-card" data-name="Es Campur / Es Buah" data-price="6000">
+                <div class="menu-info">
+                    <span class="menu-name">ES CAMPUR / ES BUAH</span>
+                    <span class="menu-description">Mix buah-buahan segar dan es kristal.</span>
+                </div>
+                <span class="menu-price">Rp 6K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Es Teh" data-price="3500">
+                <div class="menu-info">
+                    <span class="menu-name">ES TEH</span>
+                    <span class="menu-description">Penyegar klasik (Dingin).</span>
+                </div>
+                <span class="menu-price">Rp 3,5K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Teh Anget" data-price="3500">
+                <div class="menu-info">
+                    <span class="menu-name">TEH ANGET</span>
+                    <span class="menu-description">Penyegar klasik (Panas).</span>
+                </div>
+                <span class="menu-price">Rp 3,5K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Es Jeruk" data-price="3500">
+                <div class="menu-info">
+                    <span class="menu-name">ES JERUK</span>
+                    <span class="menu-description">Jeruk peras murni (Dingin).</span>
+                </div>
+                <span class="menu-price">Rp 3,5K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+            <li class="menu-item glass-card" data-name="Jeruk Anget" data-price="3500">
+                <div class="menu-info">
+                    <span class="menu-name">JERUK ANGET</span>
+                    <span class="menu-description">Jeruk peras murni (Panas).</span>
+                </div>
+                <span class="menu-price">Rp 3,5K</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+             <li class="menu-item glass-card" data-name="Aneka Jus (Variatif)" data-price="1">
+                <div class="menu-info">
+                    <span class="menu-name">ANEKA JUS (Variatif)</span>
+                    <span class="menu-description">Harga tergantung jenis buah. (Wajib konfirmasi harga!)</span>
+                </div>
+                <span class="menu-price">Rp ???</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+        </ul>
+
+        <h2><i class="fas fa-rocket"></i> Paket Super Hemat!</h2>
+        <ul class="menu-grid">
+            <li class="menu-item package-item glass-card" data-name="PAKET: Mie Ceker + Es Teh" data-price="12000">
+                <div class="menu-info">
+                    <span class="menu-name">MIE AYAM CEKER + ES TEH</span>
+                    <span class="menu-description" style="font-weight: 600;">Dapatkan satu porsi Mie Ayam Ceker dan Es Teh.</span>
+                </div>
+                <span class="menu-price">Rp 12.000</span>
+                <div class="quantity-control">
+                    <input type="number" min="0" value="0" class="quantity-input" onchange="calculateOrder()">
+                </div>
+            </li>
+        </ul>
+
+        <div id="summary" class="glass-card">
+            <h3>Ringkasan Pesanan Anda</h3>
+            <p id="total-harga">Total: Rp 0</p>
+            
+            <a 
+                id="whatsapp-link"
+                href="#" 
+                class="whatsapp-button" 
+                target="_blank"
+                onclick="sendOrder(event)"
+            >
+                <i class="fab fa-whatsapp whatsapp-icon"></i> KIRIM PESANAN VIA WHATSAPP
+            </a>
+        </div>
+        
+        <div id="contact-info" class="glass-card">
+            <h3>Kunjungi Kami & Terhubung!</h3>
+            <p style="color: var(--text-faded); margin-top: 10px;">
+                Cek lokasi kami atau *follow* IG untuk promo terbaru!
+            </p>
+            <div class="contact-group">
+                <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Mie+Ayam+Kebon+Jeruk+Magetan" 
+                    target="_blank" 
+                    title="Lihat di Google Maps"
+                >
+                    <i class="fas fa-location-dot"></i> Jl. Ronggolawa, KEC. Sukomoro, Magetan
+                </a>
+                
+                <a href="https://www.instagram.com/mieayam_kbj" target="_blank" title="Kunjungi Instagram">
+                    <i class="fab fa-instagram"></i> @mieayam_kbj
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        Mie Ayam Kebon Jeruk © 2025 | Dipesan via Menu Digital.
+    </footer>
+
+    <script>
+        const phone = '6285647420646';
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(angka);
+        }
+
+        function calculateOrder() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            let totalCost = 0;
+            let orderDetails = [];
+            let hasJus = false;
+
+            menuItems.forEach(item => {
+                const name = item.getAttribute('data-name');
+                const price = parseInt(item.getAttribute('data-price'));
+                const quantityInput = item.querySelector('.quantity-input');
+                
+                if (quantityInput) {
+                    const quantity = parseInt(quantityInput.value) || 0;
+                    
+                    if (quantity > 0) {
+                        
+                        if (name.includes('Aneka Jus')) {
+                            hasJus = true;
+                            orderDetails.push(`${quantity}x ${name} (HARGA KONFIRMASI)`);
+                        } else {
+                            const subTotal = price * quantity;
+                            totalCost += subTotal;
+                            orderDetails.push(`${quantity}x ${name} (${formatRupiah(price)})`);
+                        }
+                    }
+                }
+            });
+
+            if (hasJus) {
+                document.getElementById('total-harga').textContent = `Total: ${formatRupiah(totalCost)} (+ Harga Jus)`;
+            } else {
+                document.getElementById('total-harga').textContent = `Total: ${formatRupiah(totalCost)}`;
+            }
+
+            window.orderDetails = orderDetails;
+            window.totalCost = totalCost;
+            window.hasJus = hasJus;
+        }
+
+        function sendOrder(event) {
+            event.preventDefault();
+
+            if (window.totalCost === 0 && !window.hasJus) {
+                alert('Mohon pilih jumlah pesanan Anda terlebih dahulu.');
+                return;
+            }
+
+            let message = `*HALO MIE AYAM KEBON JERUK* 🍜\n\nSaya ingin memesan menu berikut:\n`;
+
+            window.orderDetails.forEach(detail => {
+                message += `- ${detail}\n`;
+            });
+
+            if (window.hasJus) {
+                 message += `\n*PERHATIAN: Ada Aneka Jus dalam pesanan ini. Total ${formatRupiah(window.totalCost)} (belum termasuk harga Jus).*\n`;
+                 message += `Mohon sebutkan harga Jus yang tersedia dan total biaya kirim ke lokasi saya. Terima kasih!`;
+            } else {
+                 message += `\n*TOTAL HARGA: ${formatRupiah(window.totalCost)}*\n`;
+                 message += `\nMohon konfirmasi ketersediaan dan total biaya kirim ke lokasi saya. Terima kasih!`;
+            }
+           
+            const encodedMessage = encodeURIComponent(message);
+            const waLink = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+            window.open(waLink, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', calculateOrder);
+    </script>
+</body>
+</html>
